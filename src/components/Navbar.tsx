@@ -41,8 +41,9 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-luxury-black/80 backdrop-blur-lg border-b border-warm-white/5">
       <div className="container mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="/" className="font-heading text-xl text-warm-white">
-          Gift<span className="text-gradient-gold">Studio</span>
+        <a href="/" className="flex flex-col leading-none">
+          <span className="font-heading text-lg text-warm-white tracking-wide">Creative <span className="text-gradient-gold">Gifts</span> Store</span>
+          <span className="font-ui text-[10px] text-warm-white/40 tracking-[0.15em] uppercase">Personalized Gifts Store</span>
         </a>
 
         {/* Desktop links */}

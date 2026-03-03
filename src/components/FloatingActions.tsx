@@ -27,7 +27,7 @@ const FloatingActions = () => {
         )}
       </motion.button>
       <motion.a
-        href="https://instagram.com"
+        href="https://instagram.com/creativegifts.attapur"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
@@ -36,7 +36,7 @@ const FloatingActions = () => {
         <Instagram className="w-4 h-4" />
       </motion.a>
       <motion.a
-        href="https://wa.me/919999999999"
+        href="https://wa.me/919951710569"
         target="_blank"
         rel="noopener noreferrer"
         animate={{ scale: [1, 1.08, 1] }}

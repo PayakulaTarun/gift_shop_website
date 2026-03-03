@@ -6,6 +6,7 @@ import BestSellersSection from "@/components/home/BestSellersSection";
 import HowItWorksSection from "@/components/home/HowItWorksSection";
 import OccasionsSection from "@/components/home/OccasionsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import ContactSection from "@/components/home/ContactSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
@@ -23,6 +24,7 @@ const Index = () => {
       <HowItWorksSection />
       <OccasionsSection />
       <TestimonialsSection />
+      <ContactSection />
       <FinalCTASection />
       <Footer />
       <FloatingActions />

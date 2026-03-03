@@ -19,7 +19,7 @@ const FinalCTASection = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/919951710569"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
@@ -27,7 +27,7 @@ const FinalCTASection = () => {
               className="btn-coral inline-flex items-center gap-2 text-base"
             >
               <MessageCircle className="w-5 h-5" />
-              WhatsApp Chat
+              Chat on WhatsApp
             </motion.a>
             <motion.button
               whileHover={{ scale: 1.03, boxShadow: "0 8px 32px -8px hsl(36 35% 60% / 0.5)" }}

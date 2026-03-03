@@ -25,7 +25,7 @@ export const CartSheet = () => {
     const handleCheckout = () => {
         // Generate text for WhatsApp
         if (cart.length === 0) return;
-        let message = "Hi GiftStudio! I would like to place an order for the following items:\n\n";
+        let message = "Hi Creative Gifts Store! 🎁 I would like to place an order for the following items:\n\n";
         cart.forEach((item, index) => {
             message += `${index + 1}. ${item.name} x ${item.quantity} (${formatPrice(item.price * item.quantity)})\n`;
             if (item.customization) {
@@ -33,11 +33,11 @@ export const CartSheet = () => {
             }
         });
         message += `\nTotal Amount: ${formatPrice(cartTotal)}\n\n`;
-        message += "Please let me know the next steps for payment and customization details.";
+        message += "Please let me know the next steps for payment and delivery. Thank you! 🙏";
 
         // Redirect to WhatsApp
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/919999999999?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/919951710569?text=${encodedMessage}`, '_blank');
     };
 
     return (

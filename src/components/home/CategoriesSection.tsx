@@ -1,23 +1,17 @@
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useNavigate } from "react-router-dom";
-import categoryPhoto from "@/assets/category-photo-gifts.jpg";
-import categoryLed from "@/assets/category-led-gifts.jpg";
-import categoryCrystal from "@/assets/category-crystal-gifts.jpg";
-import categoryWooden from "@/assets/category-wooden.jpg";
-import categoryArtistic from "@/assets/category-artistic.jpg";
-import categoryHomeDecor from "@/assets/category-home-decor.jpg";
 
 const categories = [
-  { name: "Photo Gifts", image: categoryPhoto, emoji: "📸", count: "8+ items" },
-  { name: "LED Gifts", image: categoryLed, emoji: "💡", count: "4+ items" },
-  { name: "Crystal Gifts", image: categoryCrystal, emoji: "💎", count: "3+ items" },
-  { name: "Wooden Engravings", image: categoryWooden, emoji: "🪵", count: "3+ items" },
-  { name: "Artistic Gifts", image: categoryArtistic, emoji: "🎨", count: "3+ items" },
-  { name: "Home Decor", image: categoryHomeDecor, emoji: "🏠", count: "2+ items" },
-  { name: "T-Shirts & Apparel", image: categoryArtistic, emoji: "👕", count: "3+ items" },
-  { name: "Corporate Gifts", image: categoryWooden, emoji: "🏢", count: "4+ items" },
-  { name: "Gift Combos", image: categoryHomeDecor, emoji: "🎁", count: "4+ items" },
+  { name: "Photo Gifts", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=700&fit=crop&auto=format", emoji: "📸", count: "8+ items" },
+  { name: "LED Gifts", image: "https://images.unsplash.com/photo-1567255378603-985a46e0d952?w=600&h=700&fit=crop&auto=format", emoji: "💡", count: "4+ items" },
+  { name: "Crystal Gifts", image: "https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=600&h=700&fit=crop&auto=format", emoji: "💎", count: "3+ items" },
+  { name: "Wooden Engravings", image: "https://images.unsplash.com/photo-1550684848-2f14fbca0bb8?w=600&h=700&fit=crop&auto=format", emoji: "🪵", count: "3+ items" },
+  { name: "Artistic Gifts", image: "https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&h=700&fit=crop&auto=format", emoji: "🎨", count: "3+ items" },
+  { name: "Home Decor", image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&h=700&fit=crop&auto=format", emoji: "🏠", count: "2+ items" },
+  { name: "T-Shirts & Apparel", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=700&fit=crop&auto=format", emoji: "👕", count: "3+ items" },
+  { name: "Corporate Gifts", image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=700&fit=crop&auto=format", emoji: "🏢", count: "4+ items" },
+  { name: "Gift Combos", image: "https://images.unsplash.com/photo-1513558556155-bdb3ea9d33cf?w=600&h=700&fit=crop&auto=format", emoji: "🎁", count: "4+ items" },
 ];
 
 const CategoriesSection = () => {

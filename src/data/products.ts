@@ -1,10 +1,3 @@
-import categoryPhoto from "@/assets/category-photo-gifts.jpg";
-import categoryLed from "@/assets/category-led-gifts.jpg";
-import categoryCrystal from "@/assets/category-crystal-gifts.jpg";
-import categoryWooden from "@/assets/category-wooden.jpg";
-import categoryArtistic from "@/assets/category-artistic.jpg";
-import categoryHomeDecor from "@/assets/category-home-decor.jpg";
-
 export interface Product {
     id: string;
     name: string;
@@ -17,7 +10,7 @@ export interface Product {
     rating: number;
     reviewsCount: number;
     customizationPrompt: string;
-    badge?: string; // e.g. "Bestseller", "New", "Sale"
+    badge?: string;
 }
 
 export const CATEGORIES = [
@@ -33,6 +26,61 @@ export const CATEGORIES = [
     "Gift Combos",
 ];
 
+// Curated, relevant image URLs for each product
+const IMG = {
+    // Photo Gifts
+    photoMug: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&h=600&fit=crop&auto=format",
+    magicMug: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&h=600&fit=crop&auto=format",
+    metalKeychain: "https://images.unsplash.com/photo-1601158935942-52255782d322?w=600&h=600&fit=crop&auto=format",
+    photoPillow: "https://images.unsplash.com/photo-1555041469-149b16d9eea5?w=600&h=600&fit=crop&auto=format",
+    collageFrame: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&auto=format",
+    collegeFrame: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=600&fit=crop&auto=format",
+    coupleFrame: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=600&fit=crop&auto=format",
+    polaroidLights: "https://images.unsplash.com/photo-1513558056062-c0e4e7f4dbc6?w=600&h=600&fit=crop&auto=format",
+
+    // LED Gifts
+    ledPhotoFrame: "https://images.unsplash.com/photo-1567255378603-985a46e0d952?w=600&h=600&fit=crop&auto=format",
+    ledNameLamp: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=600&fit=crop&auto=format",
+    coupleLedLamp: "https://images.unsplash.com/photo-1559925393-a4b927b6ade5?w=600&h=600&fit=crop&auto=format",
+    photoNightLamp: "https://images.unsplash.com/photo-1582213782111-a0579f212d42?w=600&h=600&fit=crop&auto=format",
+
+    // Crystal Gifts
+    crystalHeart: "https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=600&h=600&fit=crop&auto=format",
+    crystalKeychain: "https://images.unsplash.com/photo-1557180295-76eee20ae8aa?w=600&h=600&fit=crop&auto=format",
+    crystalCube: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=600&h=600&fit=crop&auto=format",
+
+    // Wooden Engravings
+    woodenNameplate: "https://images.unsplash.com/photo-1550684848-2f14fbca0bb8?w=600&h=600&fit=crop&auto=format",
+    woodenPlaque: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=600&fit=crop&auto=format",
+    woodenKeychain: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=600&fit=crop&auto=format",
+
+    // Artistic Gifts
+    canvasPortrait: "https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&h=600&fit=crop&auto=format",
+    mosaicArt: "https://images.unsplash.com/photo-1541701904979-f62a98c37c5a?w=600&h=600&fit=crop&auto=format",
+    thumbprintArt: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=600&fit=crop&auto=format",
+
+    // Home Decor
+    acrylicBlock: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?w=600&h=600&fit=crop&auto=format",
+    waterBottle: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&h=600&fit=crop&auto=format",
+
+    // T-Shirts & Apparel
+    customTshirt: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop&auto=format",
+    coupleTshirt: "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?w=600&h=600&fit=crop&auto=format",
+    hoodie: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&h=600&fit=crop&auto=format",
+
+    // Corporate Gifts
+    diaryPen: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&auto=format",
+    metalPen: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=600&h=600&fit=crop&auto=format",
+    corporateMugs: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=600&fit=crop&auto=format",
+    corporateBottle: "https://images.unsplash.com/photo-1626763847099-04c7b54f6a9a?w=600&h=600&fit=crop&auto=format",
+
+    // Gift Combos
+    birthdayCombo: "https://images.unsplash.com/photo-1513558556155-bdb3ea9d33cf?w=600&h=600&fit=crop&auto=format",
+    valentineCombo: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=600&fit=crop&auto=format",
+    anniversaryCombo: "https://images.unsplash.com/photo-1512909922001-a2d2ea7e0f66?w=600&h=600&fit=crop&auto=format",
+    corporateHamper: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&h=600&fit=crop&auto=format",
+};
+
 export const PRODUCTS: Product[] = [
     // ─── PHOTO GIFTS ─────────────────────────────────────────
     {
@@ -40,7 +88,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Photo Mug",
         price: 349,
         displayPrice: "₹349",
-        image: categoryPhoto,
+        image: IMG.photoMug,
         category: "Photo Gifts",
         badge: "Bestseller",
         description: "Start your mornings with a smile! A high-quality ceramic mug featuring your favorite photo or custom design, printed with vibrant, long-lasting inks.",
@@ -54,7 +102,7 @@ export const PRODUCTS: Product[] = [
         name: "Magic Color-Changing Mug",
         price: 499,
         displayPrice: "₹499",
-        image: categoryPhoto,
+        image: IMG.magicMug,
         category: "Photo Gifts",
         description: "A magical mug that appears black when cold but reveals your hidden photo and message when hot liquid is poured. Perfect surprise gift!",
         features: ["Heat-sensitive color change", "Microwave safe", "HD photo reveal", "Set available"],
@@ -67,7 +115,7 @@ export const PRODUCTS: Product[] = [
         name: "Metal Photo Keychain",
         price: 199,
         displayPrice: "₹199",
-        image: categoryPhoto,
+        image: IMG.metalKeychain,
         category: "Photo Gifts",
         badge: "Bestseller",
         description: "A premium metal keychain with a high-gloss photo print protected by scratch-resistant resin coating. Carry your memory everywhere!",
@@ -81,7 +129,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Photo Pillow",
         price: 599,
         displayPrice: "₹599",
-        image: categoryHomeDecor,
+        image: IMG.photoPillow,
         category: "Photo Gifts",
         description: "Combine comfort with memories! A soft plush pillow with your favorite photo or message printed edge-to-edge.",
         features: ["40x40cm plush pillow", "Washable cover", "Vibrant edge-to-edge print", "Zipper closure"],
@@ -94,7 +142,7 @@ export const PRODUCTS: Product[] = [
         name: "Collage Photo Frame",
         price: 799,
         displayPrice: "₹799",
-        image: categoryPhoto,
+        image: IMG.collageFrame,
         category: "Photo Gifts",
         description: "A stunning collage frame that combines multiple photos into one beautiful keepsake. Ideal for gifting on birthdays and anniversaries.",
         features: ["Holds 6–10 photos", "Wooden or acrylic frame", "Custom text overlay", "Ready to hang"],
@@ -107,7 +155,7 @@ export const PRODUCTS: Product[] = [
         name: "College Memory Photo Frame",
         price: 899,
         displayPrice: "₹899",
-        image: categoryPhoto,
+        image: IMG.collegeFrame,
         category: "Photo Gifts",
         badge: "Popular",
         description: "Celebrate your college memories with a premium college-themed frame featuring your batch photo and personalized details.",
@@ -121,7 +169,7 @@ export const PRODUCTS: Product[] = [
         name: "Couple Love Photo Frame",
         price: 699,
         displayPrice: "₹699",
-        image: categoryPhoto,
+        image: IMG.coupleFrame,
         category: "Photo Gifts",
         description: "A romantic couple frame beautifully designed with hearts, dates, and names — a perfect gift for Valentine's Day and anniversaries.",
         features: ["Couple design template", "Customizable names", "Date engraving", "Premium quality print"],
@@ -134,7 +182,7 @@ export const PRODUCTS: Product[] = [
         name: "Retro Polaroid String Lights",
         price: 799,
         displayPrice: "₹799",
-        image: categoryPhoto,
+        image: IMG.polaroidLights,
         category: "Photo Gifts",
         description: "30 custom printed polaroid-style mini photos clipped to warm white fairy LED strings — create a beautiful memory wall!",
         features: ["30 custom photo prints", "3-meter LED clip string", "Battery operated", "Glossy photo finish"],
@@ -149,7 +197,7 @@ export const PRODUCTS: Product[] = [
         name: "LED Glow Photo Frame",
         price: 1299,
         displayPrice: "₹1,299",
-        image: categoryLed,
+        image: IMG.ledPhotoFrame,
         category: "LED Gifts",
         badge: "Bestseller",
         description: "Illuminate your precious memories with this premium LED backlit photo frame — a perfect bedside companion or living room centrepiece.",
@@ -163,7 +211,7 @@ export const PRODUCTS: Product[] = [
         name: "Personalized LED Name Lamp",
         price: 1499,
         displayPrice: "₹1,499",
-        image: categoryLed,
+        image: IMG.ledNameLamp,
         category: "LED Gifts",
         description: "An intricately cut acrylic name lamp that glows beautifully in 16 colours. Perfect bedroom décor and a unique personalised gift.",
         features: ["16-colour RGB remote", "Dimmable brightness", "Shatterproof acrylic", "USB 5V adapter"],
@@ -176,7 +224,7 @@ export const PRODUCTS: Product[] = [
         name: "Couple Photo LED Lamp",
         price: 1699,
         displayPrice: "₹1,699",
-        image: categoryLed,
+        image: IMG.coupleLedLamp,
         category: "LED Gifts",
         badge: "Popular",
         description: "A romantic dual-layer LED lamp featuring your couple photo with a custom message — glows in magical colours. Top Valentine's Day seller!",
@@ -190,7 +238,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Photo Night Lamp",
         price: 999,
         displayPrice: "₹999",
-        image: categoryLed,
+        image: IMG.photoNightLamp,
         category: "LED Gifts",
         description: "A personalized cylindrical lamp printed with your selected photos — beautiful when lit up, perfect as a bedside night lamp.",
         features: ["360° photo wrap print", "Warm glow LED", "USB powered", "Multiple photos on one lamp"],
@@ -205,7 +253,7 @@ export const PRODUCTS: Product[] = [
         name: "Crystal Heart 3D Engraving",
         price: 2499,
         displayPrice: "₹2,499",
-        image: categoryCrystal,
+        image: IMG.crystalHeart,
         category: "Crystal Gifts",
         badge: "Premium",
         description: "A stunning 3D laser-engraved heart crystal that captures your photo details vividly inside premium K9 glass. Comes with a glowing LED base.",
@@ -219,7 +267,7 @@ export const PRODUCTS: Product[] = [
         name: "Crystal Photo Keychain Set",
         price: 499,
         displayPrice: "₹499",
-        image: categoryCrystal,
+        image: IMG.crystalKeychain,
         category: "Crystal Gifts",
         description: "Carry your loved ones wherever you go! A miniature 3D photo crystal that glows when pressed. Available in a set of 2.",
         features: ["Set of 2 keychains", "Button-cell LED glow", "Durable split ring", "Scratch-resistant"],
@@ -232,7 +280,7 @@ export const PRODUCTS: Product[] = [
         name: "Crystal Photo Cube",
         price: 1899,
         displayPrice: "₹1,899",
-        image: categoryCrystal,
+        image: IMG.crystalCube,
         category: "Crystal Gifts",
         description: "A solid 3D crystal cube with your photo or couple image laser-etched inside — a timeless, elegant keepsake gift.",
         features: ["Premium K9 crystal cube", "3D internal engraving", "LED base included", "Multiple size options"],
@@ -247,7 +295,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Wooden Nameplate",
         price: 999,
         displayPrice: "₹999",
-        image: categoryWooden,
+        image: IMG.woodenNameplate,
         category: "Wooden Engravings",
         description: "Add rustic charm to any desk or wall with this precision laser-cut wooden nameplate. Perfect for home, office, or gifting.",
         features: ["Natural birch wood", "High-precision engraving", "Eco-friendly finish", "Table stand included"],
@@ -260,7 +308,7 @@ export const PRODUCTS: Product[] = [
         name: "Engraved Photo Plaque",
         price: 1199,
         displayPrice: "₹1,199",
-        image: categoryWooden,
+        image: IMG.woodenPlaque,
         category: "Wooden Engravings",
         description: "Your favourite photograph etched forever in solid wood — a timeless piece of art that blends with any home décor style.",
         features: ["Solid wood", "Deep-set engraving", "Wall mounting hooks", "Natural grain finish"],
@@ -273,7 +321,7 @@ export const PRODUCTS: Product[] = [
         name: "Engraved Wooden Keychain",
         price: 249,
         displayPrice: "₹249",
-        image: categoryWooden,
+        image: IMG.woodenKeychain,
         category: "Wooden Engravings",
         description: "A lightweight, pocket-sized wooden keychain with your photo on one side and a personal message laser-engraved on the reverse.",
         features: ["Double-sided engraving", "Smooth sanded finish", "Metal clasp", "Eco-friendly"],
@@ -288,7 +336,7 @@ export const PRODUCTS: Product[] = [
         name: "Hand-Painted Canvas Portrait",
         price: 1799,
         displayPrice: "₹1,799",
-        image: categoryArtistic,
+        image: IMG.canvasPortrait,
         category: "Artistic Gifts",
         description: "Transform your favourite photo into a beautifully hand-painted digital canvas art piece. Ready to hang, gallery-wrapped, and stunning.",
         features: ["Stretched canvas", "UV-resistant inks", "Custom digital painting", "Ready to hang"],
@@ -301,7 +349,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Mosaic Photo Art",
         price: 1499,
         displayPrice: "₹1,499",
-        image: categoryArtistic,
+        image: IMG.mosaicArt,
         category: "Artistic Gifts",
         badge: "Unique",
         description: "Your main photo recreated from hundreds of tiny mini photos — a jaw-dropping mosaic art piece that must be seen to be believed!",
@@ -315,7 +363,7 @@ export const PRODUCTS: Product[] = [
         name: "Thumbprint Couple Art",
         price: 899,
         displayPrice: "₹899",
-        image: categoryArtistic,
+        image: IMG.thumbprintArt,
         category: "Artistic Gifts",
         description: "A unique art piece made from two thumbprints intertwined — personalized with your names and special date. A romantic Valentine's favourite!",
         features: ["Custom thumbprint design", "Names & date printed", "A4 frame size", "White or black background"],
@@ -330,7 +378,7 @@ export const PRODUCTS: Product[] = [
         name: "Glassy Acrylic Desk Block",
         price: 999,
         displayPrice: "₹999",
-        image: categoryHomeDecor,
+        image: IMG.acrylicBlock,
         category: "Home Decor",
         description: "A thick, high-gloss 1-inch acrylic block with premium HD photo print — stands perfectly on desks, shelves, and bedside tables.",
         features: ["1-inch thick acrylic", "Vibrant edge-to-edge print", "Polished borders", "No stand needed"],
@@ -343,7 +391,7 @@ export const PRODUCTS: Product[] = [
         name: "Personalized Steel Water Bottle",
         price: 699,
         displayPrice: "₹699",
-        image: categoryHomeDecor,
+        image: IMG.waterBottle,
         category: "Home Decor",
         badge: "Popular",
         description: "A premium stainless steel hot-and-cold water bottle with your custom name, logo, or photo printed — ideal for gifting and corporate use.",
@@ -359,7 +407,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Printed T-Shirt",
         price: 499,
         displayPrice: "₹499",
-        image: categoryArtistic,
+        image: IMG.customTshirt,
         category: "T-Shirts & Apparel",
         badge: "Bestseller",
         description: "Express yourself with a 100% cotton t-shirt featuring your custom photo, name, quote, or graphic printed with premium DTF technology.",
@@ -373,7 +421,7 @@ export const PRODUCTS: Product[] = [
         name: "Couple Matching T-Shirt Set",
         price: 999,
         displayPrice: "₹999",
-        image: categoryArtistic,
+        image: IMG.coupleTshirt,
         category: "T-Shirts & Apparel",
         description: "A matching couples t-shirt set with sweet complementary designs — ideal for Valentine's Day, anniversaries, and couple outings.",
         features: ["Set of 2 t-shirts", "Matching design pair", "All sizes available", "Premium print quality"],
@@ -386,7 +434,7 @@ export const PRODUCTS: Product[] = [
         name: "Personalized Printed Hoodie",
         price: 999,
         displayPrice: "₹999",
-        image: categoryArtistic,
+        image: IMG.hoodie,
         category: "T-Shirts & Apparel",
         description: "A cozy heavyweight hoodie with your custom design, photo, or text printed across the front — a great personalised gift for any occasion.",
         features: ["Fleece-lined hoodie", "DTF print front", "Kangaroo pocket", "All season wear"],
@@ -401,7 +449,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Diary & Pen Combo",
         price: 599,
         displayPrice: "₹599",
-        image: categoryWooden,
+        image: IMG.diaryPen,
         category: "Corporate Gifts",
         badge: "Corporate",
         description: "A premium A5 diary with embossed logo/name, paired with a matching custom-printed metal pen. Perfect for corporate gifting and events.",
@@ -415,7 +463,7 @@ export const PRODUCTS: Product[] = [
         name: "Custom Engraved Metal Pen",
         price: 249,
         displayPrice: "₹249",
-        image: categoryWooden,
+        image: IMG.metalPen,
         category: "Corporate Gifts",
         description: "A sleek, premium metal roller pen with a name or message laser-engraved on the barrel — an elegant, professional gifting option.",
         features: ["Premium metal body", "Laser engraving", "Smooth ink write", "Individual gift box"],
@@ -428,7 +476,7 @@ export const PRODUCTS: Product[] = [
         name: "Bulk Corporate Branded Mugs",
         price: 299,
         displayPrice: "₹299/pc",
-        image: categoryPhoto,
+        image: IMG.corporateMugs,
         category: "Corporate Gifts",
         badge: "Bulk Orders",
         description: "Premium white ceramic mugs with your company logo and branding — ideal for corporate events, employee gifting, and promotions. MOQ: 12 pcs.",
@@ -442,7 +490,7 @@ export const PRODUCTS: Product[] = [
         name: "Branded Steel Bottle Set",
         price: 599,
         displayPrice: "₹599/pc",
-        image: categoryHomeDecor,
+        image: IMG.corporateBottle,
         category: "Corporate Gifts",
         description: "Personalized stainless steel bottles with company logo etching — a premium, eco-friendly corporate gift that keeps your brand visible.",
         features: ["500ml stainless steel", "Company logo etching", "Hot & cold insulated", "MOQ: 10 pieces"],
@@ -457,7 +505,7 @@ export const PRODUCTS: Product[] = [
         name: "Birthday Special Gift Combo",
         price: 1299,
         displayPrice: "₹1,299",
-        image: categoryHomeDecor,
+        image: IMG.birthdayCombo,
         category: "Gift Combos",
         badge: "🎂 Birthday",
         description: "The ultimate birthday hamper — a photo mug, a custom keychain, and a personalised photo frame all packed together in a premium gift box.",
@@ -471,7 +519,7 @@ export const PRODUCTS: Product[] = [
         name: "Valentine's Day Couple Combo",
         price: 1799,
         displayPrice: "₹1,799",
-        image: categoryArtistic,
+        image: IMG.valentineCombo,
         category: "Gift Combos",
         badge: "❤️ Valentine's",
         description: "A romantic Valentine's set featuring a couple LED lamp, a thumbprint art frame, and a love-themed custom mug — gift-boxed beautifully.",
@@ -485,7 +533,7 @@ export const PRODUCTS: Product[] = [
         name: "Anniversary Luxury Combo",
         price: 2499,
         displayPrice: "₹2,499",
-        image: categoryCrystal,
+        image: IMG.anniversaryCombo,
         category: "Gift Combos",
         badge: "💍 Anniversary",
         description: "Celebrate love with a crystal 3D heart, a couple photo cushion, and a personalised canvas — a luxury set worthy of every milestone anniversary.",
@@ -499,7 +547,7 @@ export const PRODUCTS: Product[] = [
         name: "Corporate Event Gift Hamper",
         price: 999,
         displayPrice: "₹999/set",
-        image: categoryWooden,
+        image: IMG.corporateHamper,
         category: "Gift Combos",
         badge: "🏢 Corporate",
         description: "A professional corporate hamper with a branded diary, engraved pen, and custom bottle — packaged elegantly for events, launches & gifting.",

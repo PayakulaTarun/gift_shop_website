@@ -3,8 +3,8 @@ import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ShoppingBag, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from "@/components/Footer";
-import FloatingActions from "@/components/FloatingActions";
 import { CartSheet } from "@/components/CartSheet";
 import { SearchDialog } from "@/components/SearchDialog";
 import { useCart } from "@/context/CartContext";
@@ -50,7 +50,8 @@ const Shop = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col pt-16 section-warm-white">
+        <div className="min-h-screen flex flex-col section-warm-white">
+            <AnnouncementBar />
             <Navbar />
 
             <main className="flex-1 container mx-auto px-6 py-12">
@@ -68,8 +69,8 @@ const Shop = () => {
                             key={category}
                             onClick={() => handleCategoryClick(category)}
                             className={`font-ui text-sm px-5 py-2 rounded-full transition-all ${activeCategory === category
-                                    ? "bg-gold text-luxury-black font-semibold shadow-md"
-                                    : "bg-white border border-border/50 text-luxury-black/70 hover:border-gold"
+                                ? "bg-gold text-luxury-black font-semibold shadow-md"
+                                : "bg-white border border-border/50 text-luxury-black/70 hover:border-gold"
                                 }`}
                         >
                             {category}
@@ -133,7 +134,6 @@ const Shop = () => {
             </main>
 
             <Footer />
-            <FloatingActions />
             <CartSheet />
             <SearchDialog />
         </div>

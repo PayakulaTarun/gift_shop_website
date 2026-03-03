@@ -3,8 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Star, Minus, Plus, ShoppingBag, ArrowLeft, Truck, ShieldCheck, Heart } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from "@/components/Footer";
-import FloatingActions from "@/components/FloatingActions";
 import { CartSheet } from "@/components/CartSheet";
 import { SearchDialog } from "@/components/SearchDialog";
 import { useCart } from "@/context/CartContext";
@@ -58,7 +58,8 @@ const Product = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col pt-16 bg-warm-white selection:bg-gold/20">
+        <div className="min-h-screen flex flex-col bg-warm-white selection:bg-gold/20">
+            <AnnouncementBar />
             <Navbar />
 
             <main className="flex-1 container mx-auto px-6 py-12">
@@ -205,7 +206,6 @@ const Product = () => {
             </main>
 
             <Footer />
-            <FloatingActions />
             <CartSheet />
             <SearchDialog />
         </div>

@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingBag, Search } from "lucide-react";
+import { Menu, X, ShoppingBag, Search, MessageCircle, Instagram } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
 
@@ -81,13 +81,32 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-warm-white"
-        >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile: right-side icons */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            className="text-warm-white/70 hover:text-gold transition-colors"
+            onClick={() => setIsSearchOpen(true)}
+          >
+            <Search className="w-4 h-4" />
+          </button>
+          <button
+            className="text-warm-white/70 hover:text-gold transition-colors relative"
+            onClick={() => setIsCartOpen(true)}
+          >
+            <ShoppingBag className="w-4 h-4" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-coral rounded-full text-[9px] flex items-center justify-center text-warm-white font-ui">
+                {cartCount}
+              </span>
+            )}
+          </button>
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-warm-white"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -105,11 +124,30 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNav(e, link.href)}
-                  className="font-ui text-warm-white/70 hover:text-gold transition-colors"
+                  className="font-ui text-warm-white/70 hover:text-gold transition-colors py-1 border-b border-warm-white/5"
                 >
                   {link.label}
                 </a>
               ))}
+              {/* Mobile social links */}
+              <div className="flex gap-3 pt-2">
+                <a
+                  href="https://wa.me/919951710569"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-ui py-2.5 rounded-full"
+                >
+                  <MessageCircle className="w-4 h-4" /> WhatsApp
+                </a>
+                <a
+                  href="https://www.instagram.com/creativegifts.attapur/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-ui py-2.5 rounded-full"
+                >
+                  <Instagram className="w-4 h-4" /> Instagram
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

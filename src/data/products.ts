@@ -26,57 +26,57 @@ export const CATEGORIES = [
     "Gift Combos",
 ];
 
-// Curated, relevant image URLs for each product
+// AI-generated product images (exact match to product)
 const IMG = {
-    // Photo Gifts
-    photoMug: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&h=600&fit=crop&auto=format",
-    magicMug: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&h=600&fit=crop&auto=format",
-    metalKeychain: "https://images.unsplash.com/photo-1601158935942-52255782d322?w=600&h=600&fit=crop&auto=format",
-    photoPillow: "https://images.unsplash.com/photo-1555041469-149b16d9eea5?w=600&h=600&fit=crop&auto=format",
-    collageFrame: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&auto=format",
+    // Photo Gifts — AI generated
+    photoMug: "/products/photo_mug.png",
+    magicMug: "/products/magic_mug.png",
+    metalKeychain: "/products/metal_keychain.png",
+    photoPillow: "/products/photo_pillow.png",
+    collageFrame: "/products/collage_frame.png",
     collegeFrame: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=600&fit=crop&auto=format",
     coupleFrame: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=600&fit=crop&auto=format",
-    polaroidLights: "https://images.unsplash.com/photo-1513558056062-c0e4e7f4dbc6?w=600&h=600&fit=crop&auto=format",
+    polaroidLights: "/products/polaroid_lights.png",
 
-    // LED Gifts
-    ledPhotoFrame: "https://images.unsplash.com/photo-1567255378603-985a46e0d952?w=600&h=600&fit=crop&auto=format",
-    ledNameLamp: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=600&fit=crop&auto=format",
+    // LED Gifts — AI generated
+    ledPhotoFrame: "/products/led_photo_frame.png",
+    ledNameLamp: "/products/led_name_lamp.png",
     coupleLedLamp: "https://images.unsplash.com/photo-1559925393-a4b927b6ade5?w=600&h=600&fit=crop&auto=format",
-    photoNightLamp: "https://images.unsplash.com/photo-1582213782111-a0579f212d42?w=600&h=600&fit=crop&auto=format",
+    photoNightLamp: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=600&fit=crop&auto=format",
 
-    // Crystal Gifts
-    crystalHeart: "https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=600&h=600&fit=crop&auto=format",
-    crystalKeychain: "https://images.unsplash.com/photo-1557180295-76eee20ae8aa?w=600&h=600&fit=crop&auto=format",
+    // Crystal Gifts — AI generated
+    crystalHeart: "/products/crystal_heart.png",
+    crystalKeychain: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=600&fit=crop&auto=format",
     crystalCube: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=600&h=600&fit=crop&auto=format",
 
-    // Wooden Engravings
-    woodenNameplate: "https://images.unsplash.com/photo-1550684848-2f14fbca0bb8?w=600&h=600&fit=crop&auto=format",
+    // Wooden Engravings — AI generated
+    woodenNameplate: "/products/wooden_nameplate.png",
     woodenPlaque: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=600&fit=crop&auto=format",
     woodenKeychain: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=600&fit=crop&auto=format",
 
-    // Artistic Gifts
-    canvasPortrait: "https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&h=600&fit=crop&auto=format",
-    mosaicArt: "https://images.unsplash.com/photo-1541701904979-f62a98c37c5a?w=600&h=600&fit=crop&auto=format",
+    // Artistic Gifts — AI generated
+    canvasPortrait: "/products/canvas_portrait.png",
+    mosaicArt: "/products/mosaic_art.png",
     thumbprintArt: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=600&fit=crop&auto=format",
 
     // Home Decor
     acrylicBlock: "https://images.unsplash.com/photo-1586996292898-71f4036c4e07?w=600&h=600&fit=crop&auto=format",
     waterBottle: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&h=600&fit=crop&auto=format",
 
-    // T-Shirts & Apparel
-    customTshirt: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop&auto=format",
+    // T-Shirts & Apparel — AI generated
+    customTshirt: "/products/custom_tshirt.png",
     coupleTshirt: "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?w=600&h=600&fit=crop&auto=format",
     hoodie: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&h=600&fit=crop&auto=format",
 
-    // Corporate Gifts
-    diaryPen: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&auto=format",
+    // Corporate Gifts — AI generated
+    diaryPen: "/products/diary_pen.png",
     metalPen: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=600&h=600&fit=crop&auto=format",
     corporateMugs: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=600&fit=crop&auto=format",
     corporateBottle: "https://images.unsplash.com/photo-1626763847099-04c7b54f6a9a?w=600&h=600&fit=crop&auto=format",
 
-    // Gift Combos
-    birthdayCombo: "https://images.unsplash.com/photo-1513558556155-bdb3ea9d33cf?w=600&h=600&fit=crop&auto=format",
-    valentineCombo: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=600&fit=crop&auto=format",
+    // Gift Combos — AI generated
+    birthdayCombo: "/products/birthday_combo.png",
+    valentineCombo: "/products/valentine_combo.png",
     anniversaryCombo: "https://images.unsplash.com/photo-1512909922001-a2d2ea7e0f66?w=600&h=600&fit=crop&auto=format",
     corporateHamper: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&h=600&fit=crop&auto=format",
 };

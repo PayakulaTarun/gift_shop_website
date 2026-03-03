@@ -1,73 +1,69 @@
-# Welcome to your Lovable project
+# 🎁 GiftStudio — Premium Personalized Gifts
 
-## Project info
+GiftStudio is a beautifully crafted e-commerce platform for personalized, custom gifting experiences. From LED photo frames to 3D crystal engravings, wooden nameplates, and photo keychains — every product is unique and customizable.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Live Demo
 
-## How can I edit this code?
+> Deployed on Vercel — connect your repo to get instant deployments.
 
-There are several ways of editing your application.
+## ✨ Features
 
-**Use Lovable**
+- 🛒 **Shopping Cart** — Add, update quantity, and remove items with persistence via `localStorage`
+- 🔍 **Search** — Instant product search across the full catalog
+- 🎨 **Customization** — Each product has a unique personalization prompt for engraving, names, dates etc.
+- 📱 **WhatsApp Checkout** — Order placed via a pre-filled WhatsApp message with full order details
+- 🏪 **Shop Page** — Browse all products, filter by category
+- 📦 **Product Detail Page** — Detailed view with features, rating, customization input, and quantity selector
+- 🌙 **Luxury Dark Theme** — Premium glassmorphism UI with gold accents
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React 18** + **TypeScript**
+- **Vite** — Lightning-fast build tool
+- **Tailwind CSS** — Utility-first styling
+- **shadcn/ui** — Accessible UI component library
+- **Framer Motion** — Smooth animations
+- **React Router DOM** — Client-side routing
+- **Sonner** — Toast notifications
+- **TanStack React Query** — Data fetching
 
-**Use your preferred IDE**
+## 📦 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js 18+
+- npm or bun
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/PayakulaTarun/gift_shop_website.git
+cd gift_shop_website
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:8080](http://localhost:8080) to view the app.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📂 Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── assets/          # Product & category images
+├── components/      # Reusable UI components
+│   ├── home/        # Landing page sections
+│   ├── ui/          # shadcn/ui base components
+│   ├── CartSheet    # Slide-out shopping cart
+│   ├── SearchDialog # Global search modal
+│   └── Navbar       # Site navigation
+├── context/         # CartContext — global state
+├── data/            # products.ts — full product catalog
+├── hooks/           # useScrollReveal, useCart
+└── pages/           # Index, Shop, Product, NotFound
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🚀 Deployment
 
-## What technologies are used for this project?
+Connect this repo to [Vercel](https://vercel.com) for automatic deployments on every push.
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Build command: `npm run build`  
+Output directory: `dist`

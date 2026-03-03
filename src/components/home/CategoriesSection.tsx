@@ -9,12 +9,15 @@ import categoryArtistic from "@/assets/category-artistic.jpg";
 import categoryHomeDecor from "@/assets/category-home-decor.jpg";
 
 const categories = [
-  { name: "Photo Gifts", image: categoryPhoto },
-  { name: "LED Gifts", image: categoryLed },
-  { name: "Crystal Gifts", image: categoryCrystal },
-  { name: "Wooden Engravings", image: categoryWooden },
-  { name: "Artistic Gifts", image: categoryArtistic },
-  { name: "Home Decor", image: categoryHomeDecor },
+  { name: "Photo Gifts", image: categoryPhoto, emoji: "📸", count: "8+ items" },
+  { name: "LED Gifts", image: categoryLed, emoji: "💡", count: "4+ items" },
+  { name: "Crystal Gifts", image: categoryCrystal, emoji: "💎", count: "3+ items" },
+  { name: "Wooden Engravings", image: categoryWooden, emoji: "🪵", count: "3+ items" },
+  { name: "Artistic Gifts", image: categoryArtistic, emoji: "🎨", count: "3+ items" },
+  { name: "Home Decor", image: categoryHomeDecor, emoji: "🏠", count: "2+ items" },
+  { name: "T-Shirts & Apparel", image: categoryArtistic, emoji: "👕", count: "3+ items" },
+  { name: "Corporate Gifts", image: categoryWooden, emoji: "🏢", count: "4+ items" },
+  { name: "Gift Combos", image: categoryHomeDecor, emoji: "🎁", count: "4+ items" },
 ];
 
 const CategoriesSection = () => {
@@ -29,7 +32,7 @@ const CategoriesSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl text-luxury-black">Shop by Category</h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {categories.map((cat, i) => (
             <div key={cat.name} className="scroll-reveal" style={{ transitionDelay: `${i * 100}ms` }}>
               <motion.div
@@ -53,8 +56,14 @@ const CategoriesSection = () => {
                   </span>
                 </div>
                 {/* Title */}
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="font-heading text-lg md:text-xl text-warm-white">{cat.name}</h3>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">{cat.emoji}</span>
+                    <div>
+                      <h3 className="font-heading text-base md:text-lg text-warm-white leading-tight">{cat.name}</h3>
+                      <p className="font-ui text-xs text-warm-white/60">{cat.count}</p>
+                    </div>
+                  </div>
                 </div>
                 {/* Border glow on hover */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-gold/40 transition-colors duration-500" />

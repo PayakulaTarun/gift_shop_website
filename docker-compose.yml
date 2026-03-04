@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  # ── PostgreSQL 16 ────────────────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: giftstudio_db
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: giftstudio
+      POSTGRES_USER: giftstudio
+      POSTGRES_PASSWORD: giftstudio
+    volumes:
+      - giftstudio_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U giftstudio -d giftstudio" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Adminer (lightweight DB UI — dev only) ────────────────────────────────
+  adminer:
+    image: adminer:4
+    container_name: giftstudio_adminer
+    restart: unless-stopped
+    ports:
+      - "8888:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles:
+      - dev
+
+volumes:
+  giftstudio_pgdata:

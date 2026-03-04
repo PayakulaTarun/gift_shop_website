@@ -22,3 +22,27 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Secrets — NEVER commit these
+.env
+.env.local
+.env.production
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+backend/.env
+backend/.env.local
+backend/.env.production
+
+# Build output
+dist/
+dist-ssr/
+frontend/dist/
+backend/dist/
+
+# Docker
+.docker/
+
+# Database
+*.dump
+*.sql.gz

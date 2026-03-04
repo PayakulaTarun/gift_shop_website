@@ -12,7 +12,7 @@ import { orders } from "../db/schema.js";
 import { eq, and } from "drizzle-orm";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_mock", {
-    apiVersion: "2025-02-24-preview",
+    apiVersion: "2025-02-24-preview" as any,
 });
 
 const paymentsRouter = new Hono();
@@ -97,7 +97,7 @@ paymentsRouter.post("/confirm/:orderId", async (c) => {
 
     // In a real app, verify the payment status with Stripe API here.
     await db.update(orders)
-        .set({ status: "confirmed", updatedAt: new Date().toISOString() })
+        .set({ status: "confirmed", updatedAt: new Date() })
         .where(eq(orders.id, orderId));
 
     return c.json({ message: "Payment confirmed", status: "confirmed" });
